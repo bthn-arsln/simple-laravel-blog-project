@@ -22,68 +22,28 @@
         <div class="container">
             <div class="row">
                 <div class="mx-auto col-lg-8 col-md-10">
-                    <div class="post-preview">
-                        <a href="{{ url('post') }}">
-                            <h2 class="post-title">
-                                Man must explore, and this is exploration at its greatest
-                            </h2>
-                            <h3 class="post-subtitle">
-                                Problems look mighty small from 150 miles up
-                            </h3>
-                        </a>
-                        <p class="post-meta">Posted by
-                            <a href="#">Start Bootstrap</a>
-                            on September 24, 2019
-                        </p>
-                    </div>
-                    <hr>
-                    <div class="post-preview">
-                        <a href="{{ url('post') }}">
-                            <h2 class="post-title">
-                                I believe every human has a finite number of heartbeats. I don't intend to waste any of
-                                mine.
-                            </h2>
-                        </a>
-                        <p class="post-meta">Posted by
-                            <a href="#">Start Bootstrap</a>
-                            on September 18, 2019
-                        </p>
-                    </div>
-                    <hr>
-                    <div class="post-preview">
-                        <a href="{{ url('post') }}">
-                            <h2 class="post-title">
-                                Science has not yet mastered prophecy
-                            </h2>
-                            <h3 class="post-subtitle">
-                                We predict too much for the next year and yet far too little for the next ten.
-                            </h3>
-                        </a>
-                        <p class="post-meta">Posted by
-                            <a href="#">Start Bootstrap</a>
-                            on August 24, 2019
-                        </p>
-                    </div>
-                    <hr>
-                    <div class="post-preview">
-                        <a href="{{ url('post') }}">
-                            <h2 class="post-title">
-                                Failure is not an option
-                            </h2>
-                            <h3 class="post-subtitle">
-                                Many say exploration is part of our destiny, but it’s actually our duty to future
-                                generations.
-                            </h3>
-                        </a>
-                        <p class="post-meta">Posted by
-                            <a href="#">Start Bootstrap</a>
-                            on July 8, 2019
-                        </p>
-                    </div>
-                    <hr>
+                    @foreach ($posts as $post)
+                        <div class="post-preview">
+                            <a href="{{ route('post', $post->id) }}">
+                                <h2 class="post-title">
+                                    {{ $post->title }}
+                                </h2>
+                                <h3 class="post-subtitle">
+                                    {{ $post->subtitle }}
+                                </h3>
+                            </a>
+                            <p class="post-meta">
+                                <a href="#">{{ $post->author->name }}</a>
+                                tarafından
+                                {{ $post->created_at->diffForHumans() }}
+                                paylaşıldı
+                            </p>
+                        </div>
+                        <hr>
+                    @endforeach
                     <!-- Pager -->
-                    <div class="clearfix">
-                        <a class="float-right btn btn-primary" href="#">Older Posts &rarr;</a>
+                    <div class="paginate">
+                        {{ $posts->links() }}
                     </div>
                 </div>
             </div>

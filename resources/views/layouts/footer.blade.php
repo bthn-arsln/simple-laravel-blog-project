@@ -4,8 +4,8 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <ul class="list-inline text-center">
+            <div class="mx-auto col-lg-8 col-md-10">
+                <ul class="text-center list-inline">
                     <li class="list-inline-item">
                         <a href="#">
                             <span class="fa-stack fa-lg">

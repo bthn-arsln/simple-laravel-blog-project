@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,19 +16,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/post', function () {
-    return view('post');
-});
-Route::get('/contact', function () {
+
+Route::get('/', [MainController::class, 'index'])->name('home');
+
+Route::get('post/{id}', [MainController::class, 'post'])->name('post');
+
+Route::get('contact', function () {
     return view('contact');
 });
-Route::get('/about', function () {
+Route::get('about', function () {
     return view('about');
 });
 
-Route::get('/admin', function () {
-    return view('admin.index');
+Route::get('login', [AuthController::class, 'index'])->name('login');
+Route::post('login', [AuthController::class, 'login'])->name('login.post');
+Route::middleware('IsAdmin')->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('index');
 });
