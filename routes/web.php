@@ -19,7 +19,7 @@ use App\Http\Controllers\DashboardController;
 
 Route::get('/', [MainController::class, 'index'])->name('home');
 
-Route::get('post/{id}', [MainController::class, 'post'])->name('post');
+Route::get('post/{slug}', [MainController::class, 'post'])->name('post');
 
 Route::get('contact', function () {
     return view('contact');
@@ -30,6 +30,10 @@ Route::get('about', function () {
 
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::post('login', [AuthController::class, 'login'])->name('login.post');
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('register', [AuthController::class, 'register'])->name('register');
+
 Route::middleware('IsAdmin')->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
 });

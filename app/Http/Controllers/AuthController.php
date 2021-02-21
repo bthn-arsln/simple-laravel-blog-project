@@ -19,4 +19,13 @@ class AuthController extends Controller
         }
         return redirect()->route('login.index');
     }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
+    }
+    public function register()
+    {
+        return view('admin.register');
+    }
 }

@@ -12,9 +12,9 @@ class MainController extends Controller
         $posts = Post::with('author')->simplePaginate(5);
         return view('index', compact('posts'));
     }
-    public function post($id)
+    public function post($slug)
     {
-        $post = Post::with('author')->find($id);
+        $post = Post::with('author')->whereSlug($slug)->first();
         return view('post', compact('post'));
     }
 }
