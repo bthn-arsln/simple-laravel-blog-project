@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="mx-auto col-lg-8 col-md-10">
                         <div class="site-heading">
-                            <h1>Clean Blog</h1>
+                            <h1>{{ env('APP_NAME') }}</h1>
                             <span class="subheading">A Blog Theme by Start Bootstrap</span>
                         </div>
                     </div>

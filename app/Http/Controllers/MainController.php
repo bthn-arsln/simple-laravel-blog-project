@@ -9,7 +9,7 @@ class MainController extends Controller
 {
     public function index()
     {
-        $posts = Post::with('author')->simplePaginate(5);
+        $posts = Post::where('status', 'publish')->with('author')->simplePaginate(5);
         return view('index', compact('posts'));
     }
     public function post($slug)

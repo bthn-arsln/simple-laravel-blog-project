@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,9 +32,10 @@ Route::get('about', function () {
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::post('login', [AuthController::class, 'login'])->name('login.post');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-
 Route::get('register', [AuthController::class, 'register'])->name('register');
 
 Route::middleware('IsAdmin')->prefix('admin')->name('admin.')->group(function () {
+    Route::get('posts/{id}', [PostController::class, 'destroy'])->whereNumber('id')->name('posts.destroy');
     Route::get('/', [DashboardController::class, 'index'])->name('index');
+    Route::resource('posts', PostController::class);
 });

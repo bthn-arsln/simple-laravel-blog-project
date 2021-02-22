@@ -8,7 +8,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="mx-3 sidebar-brand-text">SB Admin <sup>2</sup></div>
+                <div class="mx-3 sidebar-brand-text">{{ env('APP_NAME') }}</div>
             </a>
 
             <!-- Divider -->
@@ -16,9 +16,9 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{{ route('admin.index') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>Başlangıç</span></a>
             </li>
 
             <!-- Divider -->
@@ -95,16 +95,9 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                <a class="nav-link" href="{{ route('admin.posts.index') }}">
+                    <i class="far fa-fw fa-newspaper"></i>
+                    <span>Makaleler</span></a>
             </li>
 
             <!-- Divider -->
