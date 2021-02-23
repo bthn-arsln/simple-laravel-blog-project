@@ -29,8 +29,7 @@
                 <form method="get">
                     <div class="form-row">
                         <div class="col-md-2">
-                            <input type="text" name="title" class="form-control" placeholder="Makale Adı"
-                                value="{{ request()->get('title') }}">
+                            <input type="text" name="title" class="form-control" placeholder="Makale Adı">
                         </div>
                         <div class="col-md-2">
                             <select name="status" class="form-control" onchange="this.form.submit()">

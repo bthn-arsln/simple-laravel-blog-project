@@ -9,7 +9,17 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = Admin::all();
+        $users = new Admin();
+        if (request()->get('name')) {
+            $users = $users->where('name', 'LIKE', '%' . request()->get('name') . '%');
+        }
+        if (request()->get('status')) {
+            $users = $users->where('status', request()->get('status'));
+        }
+        if (request()->get('type')) {
+            $users = $users->where('type', request()->get('type'));
+        }
+        $users = $users->get();
         return view('admin.users', compact('users'));
     }
 

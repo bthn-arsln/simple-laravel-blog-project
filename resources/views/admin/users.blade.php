@@ -23,8 +23,7 @@
                 <form method="get">
                     <div class="form-row">
                         <div class="col-md-2">
-                            <input type="text" name="title" class="form-control" placeholder="Kullanıcı Adı"
-                                value="{{ request()->get('title') }}">
+                            <input type="text" name="name" class="form-control" placeholder="Ad Soyad">
                         </div>
                         <div class="col-md-2">
                             <select name="status" class="form-control" onchange="this.form.submit()">
@@ -34,7 +33,7 @@
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <select name="status" class="form-control" onchange="this.form.submit()">
+                            <select name="type" class="form-control" onchange="this.form.submit()">
                                 <option value="">Statü Seçiniz</option>
                                 <option value="superadmin">Süper Admin</option>
                                 <option value="admin">Admin</option>
