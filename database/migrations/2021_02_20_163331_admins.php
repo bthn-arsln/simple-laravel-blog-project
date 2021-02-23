@@ -18,7 +18,8 @@ class Admins extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('password');
-            $table->enum('status', ['superadmin', 'admin'])->default('admin');
+            $table->enum('type', ['superadmin', 'admin'])->default('admin');
+            $table->enum('status', ['approved', 'notapproved'])->default('notapproved');
             $table->timestamps();
         });
     }

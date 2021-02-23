@@ -21,11 +21,11 @@ class AdminFactory extends Factory
      */
     public function definition()
     {
-        $status = ['superadmin', 'admin'];
+        $type = ['superadmin', 'admin'];
         return [
             'name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
-            'status' => $status[rand(0, 1)],
+            'type' => $type[rand(0, 1)],
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
         ];
     }

@@ -48,7 +48,6 @@
                         <div class="form-group">
                             <label for="status">Durum</label>
                             <select name="status" class="form-control">
-                                <option value="">Durum Seçiniz</option>
                                 <option @if ($post->status === 'publish') selected @endif value="publish">Aktif</option>
                                 <option @if ($post->status === 'draft') selected @endif value="draft">Taslak</option>
                             </select>

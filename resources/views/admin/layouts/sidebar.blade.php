@@ -46,23 +46,13 @@
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="py-2 bg-white rounded collapse-inner">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
-            </li>
+            @if (Auth::user()->type == 'superadmin')
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.users') }}">
+                        <i class="fas fa-fw fa-users"></i>
+                        <span>Kullanıcılar</span></a>
+                </li>
+            @endif
 
             <!-- Divider -->
             <hr class="sidebar-divider">

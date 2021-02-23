@@ -48,20 +48,24 @@
                         <thead>
                             <tr>
                                 <th>Başlık</th>
+                                <th>Alt Başlık</th>
                                 <th>Fotoğraf</th>
                                 <th>Yazarlar</th>
                                 <th>Durum</th>
                                 <th>Oluşturulma Tarihi</th>
-                                <th>İşlemler</th>
+                                <th style="width: 150px;">İşlemler</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($posts as $post)
                                 <tr>
                                     <td>{{ $post->title }}</td>
+                                    <td>{{ $post->subtitle }}</td>
                                     <td>
                                         @if ($post->image)
                                             <a href="{{ asset($post->image) }}" target="_blank">Görüntüle</a>
+                                        @else
+                                            -
                                         @endif
                                     </td>
                                     <td>
@@ -74,7 +78,7 @@
                                             <span class="badge badge-warning">Taslak</span>
                                         @endif
                                     </td>
-                                    <td>{{ $post->created_at }}</td>
+                                    <td>{{ $post->created_at->diffForHumans() }}</td>
                                     <td @if ($post->author != Auth::user()) style="display: none;" @endif>
                                         <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-primary"><i
                                                 class="fa fa-edit"></i></a>
