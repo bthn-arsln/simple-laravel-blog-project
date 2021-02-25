@@ -28,8 +28,8 @@
                         <div class="form-group">
                             <label for="type">Statü</label>
                             <select name="type" class="form-control">
-                                <option @if ($user->type === 'superadmin') selected @endif value="superadmin">Süper Admin</option>
                                 <option @if ($user->type === 'admin') selected @endif value="admin">Admin</option>
+                                <option @if ($user->type === 'author') selected @endif value="author">Author</option>
                             </select>
                         </div>
                         <div class="form-group">

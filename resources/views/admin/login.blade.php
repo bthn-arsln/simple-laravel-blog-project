@@ -1,5 +1,6 @@
-@extends('admin.layouts.master')
-@section('content')
+@extends('admin.layouts.header')
+
+<body class="bg-gradient-primary">
     <div class="container">
         <!-- Outer Row -->
         <div class="row justify-content-center">
@@ -15,6 +16,11 @@
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="mb-4 text-gray-900 h4">Tekrar Hoşgeldin!</h1>
+                                        @if (Session::has('success'))
+                                            <div class="alert alert-success">
+                                                <i class="fas fa-check-circle"></i> {{ Session::get('success') }}
+                                            </div>
+                                        @endif
                                     </div>
                                     <form class="user" method="post" action="{{ route('login.post') }}">
                                         @csrf
@@ -24,8 +30,9 @@
                                                 placeholder="Email Adresini Gir...">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Şifre">
+                                            <input type="password" name="password"
+                                                class="form-control form-control-user" id="exampleInputPassword"
+                                                placeholder="Şifre">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -52,6 +59,9 @@
                                     <div class="text-center">
                                         <a class="small" href="{{ route('register') }}">Bir Hesap Oluştur!</a>
                                     </div>
+                                    <div class="text-center">
+                                        <a class="small" href="{{ route('home') }}">Siteye Geri Dön</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -63,4 +73,4 @@
         </div>
 
     </div>
-@endsection
+</body>

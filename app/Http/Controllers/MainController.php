@@ -14,7 +14,7 @@ class MainController extends Controller
     }
     public function post($slug)
     {
-        $post = Post::with('author')->whereSlug($slug)->first();
+        $post = Post::with('author')->whereSlug($slug)->first() ?? abort(404, "Makale bulunamadı");
         return view('post', compact('post'));
     }
 }

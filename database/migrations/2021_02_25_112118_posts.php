@@ -26,7 +26,7 @@ class Posts extends Migration
 
             $table->foreign('author_id')
                 ->references('id')
-                ->on('admins')
+                ->on('users')
                 ->onDelete('cascade');
         });
     }

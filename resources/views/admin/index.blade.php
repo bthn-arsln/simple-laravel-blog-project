@@ -7,6 +7,12 @@
         @include('admin.layouts.topbar')
         <!-- End of Topbar -->
 
+        @if (Session::has('success'))
+            <div class="alert alert-success">
+                <i class="fas fa-check-circle"></i> {{ Session::get('success') }}
+            </div>
+        @endif
+
         <!-- Begin Page Content -->
         <div class="container-fluid">
 

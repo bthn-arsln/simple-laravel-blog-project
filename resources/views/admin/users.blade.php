@@ -1,11 +1,16 @@
 @extends('admin.layouts.master')
 @include('admin.layouts.sidebar')
-@section('title', 'Makaleler')
+@section('title', 'Kullanıcılar')
 @section('content')
     @include('admin.layouts.topbar')
     <!-- Begin Page Content -->
     <div class="container-fluid">
 
+        @if (Session::has('success'))
+            <div class="alert alert-success">
+                <i class="fas fa-check-circle"></i> {{ Session::get('success') }}
+            </div>
+        @endif
 
         <!-- Page Heading -->
         <div class="mb-4 d-sm-flex align-items-center justify-content-between">
@@ -35,8 +40,8 @@
                         <div class="col-md-2">
                             <select name="type" class="form-control" onchange="this.form.submit()">
                                 <option value="">Statü Seçiniz</option>
-                                <option value="superadmin">Süper Admin</option>
                                 <option value="admin">Admin</option>
+                                <option value="author">Yazar</option>
                             </select>
                         </div>
                     </div>
@@ -64,10 +69,10 @@
                                             {{ $user->name }}</span>
                                     </td>
                                     <td>
-                                        @if ($user->type === 'superadmin')
-                                            <span class="badge badge-warning">Süper Admin</span>
+                                        @if ($user->type === 'admin')
+                                            <span class="badge badge-warning">Admin</span>
                                         @else
-                                            <span class="badge badge-primary">Admin</span>
+                                            <span class="badge badge-primary">Author</span>
                                         @endif
                                     </td>
                                     <td>

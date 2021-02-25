@@ -46,7 +46,7 @@
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            @if (Auth::user()->type == 'superadmin')
+            @if (Auth::user()->type == 'admin')
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.users') }}">
                         <i class="fas fa-fw fa-users"></i>
