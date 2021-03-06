@@ -164,14 +164,21 @@
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 text-gray-600 d-none d-lg-inline small">{{ Auth::user()->name }}</span>
-                <img class="img-profile rounded-circle" src="{{ asset('img/undraw_profile.svg') }}">
+                <span
+                    class="mr-2 text-gray-600 d-none d-lg-inline small">{{ Auth::user()->firstname . ' ' . Auth::user()->lastname }}</span>
+                @if (Auth::user()->gender == 'male')
+                    <img class="img-profile rounded-circle"
+                        src="{{ Auth::user()->image ? asset(Auth::user()->image) : asset('img/undraw_profile_2.svg') }}">
+                @else
+                    <img class="img-profile rounded-circle"
+                        src="{{ Auth::user()->image ? asset(Auth::user()->image) : asset('img/undraw_profile_3.svg') }}">
+                @endif
             </a>
             <!-- Dropdown - User Information -->
             <div class="shadow dropdown-menu dropdown-menu-right animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{{ route('admin.profile') }}">
                     <i class="mr-2 text-gray-400 fas fa-user fa-sm fa-fw"></i>
-                    Profile
+                    Profil
                 </a>
                 <a class="dropdown-item" href="#">
                     <i class="mr-2 text-gray-400 fas fa-cogs fa-sm fa-fw"></i>

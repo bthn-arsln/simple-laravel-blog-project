@@ -15,11 +15,14 @@ class Users extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('firstname');
+            $table->string('lastname');
             $table->string('email');
+            $table->string('image')->nullable();
             $table->string('password');
-            $table->enum('type', ['admin', 'author'])->default('author');
-            $table->enum('status', ['approved', 'notapproved'])->default('notapproved');
+            $table->enum('gender', ['male', 'female']);
+            $table->enum('type', ['admin', 'moderator', 'author'])->default('author');
+            $table->enum('status', ['active', 'passive'])->default('passive');
             $table->timestamps();
         });
     }

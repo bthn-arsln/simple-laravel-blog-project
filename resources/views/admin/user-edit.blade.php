@@ -28,15 +28,15 @@
                         <div class="form-group">
                             <label for="type">Statü</label>
                             <select name="type" class="form-control">
-                                <option @if ($user->type === 'admin') selected @endif value="admin">Admin</option>
+                                <option @if ($user->type === 'moderator') selected @endif value="moderator">Moderatör</option>
                                 <option @if ($user->type === 'author') selected @endif value="author">Author</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="status">Durum</label>
                             <select name="status" class="form-control">
-                                <option @if ($user->status === 'approved') selected @endif value="approved">Onaylı</option>
-                                <option @if ($user->status === 'notapproved') selected @endif value="notapproved">Onaylı Değil</option>
+                                <option @if ($user->status === 'active') selected @endif value="active">Onaylı</option>
+                                <option @if ($user->status === 'passive') selected @endif value="passive">Onaylanmadı</option>
                             </select>
                         </div>
                         <div class="form-group">

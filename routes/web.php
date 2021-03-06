@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +37,7 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('register', [AuthController::class, 'register'])->name('register');
 Route::post('register', [AuthController::class, 'registerPost'])->name('register.post');
 
-Route::middleware(['IsAdmin', 'IsApproved'])->prefix('admin')->name('admin.')->group(function () {
+Route::middleware(['UserCheck', 'IsActive'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('posts/{id}', [PostController::class, 'destroy'])->whereNumber('id')->name('posts.destroy');
     Route::get('/', [DashboardController::class, 'index'])->name('index');
     Route::resource('posts', PostController::class);
@@ -45,4 +46,7 @@ Route::middleware(['IsAdmin', 'IsApproved'])->prefix('admin')->name('admin.')->g
     Route::get('users/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
     Route::put('users/{id}/update', [UserController::class, 'update'])->name('user.update');
     Route::get('users/{id}', [UserController::class, 'destroy'])->name('user.destroy');
+
+    Route::get('profile', [ProfileController::class, 'index'])->name('profile');
+    Route::put('profile/{id}', [ProfileController::class, 'update'])->name('profile.update');
 });

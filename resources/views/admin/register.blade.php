@@ -18,21 +18,28 @@
                                     @csrf
                                     <div class="form-group row">
                                         <div class="mb-3 col-sm-6 mb-sm-0">
-                                            <input type="text" name="firstname" class="form-control form-control-user"
-                                                id="exampleFirstName" placeholder="Ad">
+                                            <input type="text" name="firstname" class="form-control" id="exampleFirstName"
+                                                placeholder="Ad">
                                         </div>
                                         <div class="col-sm-6">
-                                            <input type="text" name="lastname" class="form-control form-control-user"
-                                                id="exampleLastName" placeholder="Soy Ad">
+                                            <input type="text" name="lastname" class="form-control" id="exampleLastName"
+                                                placeholder="Soy Ad">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" name="email" class="form-control form-control-user"
-                                            id="exampleInputEmail" placeholder="Email Addres">
+                                        <input type="email" name="email" class="form-control" id="exampleInputEmail"
+                                            placeholder="Email Addres">
+                                    </div>
+                                    <div class="form-group">
+                                        <select name="gender" class="form-control" id="exampleGender">
+                                            <option selected>Seçiniz</option>
+                                            <option value="male">Erkek</option>
+                                            <option value="female">Kadın</option>
+                                        </select>
                                     </div>
                                     <div class="form-group row">
                                         <div class="mb-3 col-sm-6 mb-sm-0">
-                                            <input type="password" name="password" class="form-control form-control-user"
+                                            <input type="password" name="password" class="form-control"
                                                 id="exampleInputPassword" placeholder="Şifre">
                                         </div>
                                         {{-- <div class="col-sm-6">
@@ -40,14 +47,14 @@
                                                 id="exampleRepeatPassword" placeholder="Şifre Tekrar">
                                         </div> --}}
                                     </div>
-                                    <button type="submit" class="btn btn-primary btn-user btn-block">
+                                    <button type="submit" class="btn btn-primary btn-block">
                                         Kayıt Ol
                                     </button>
                                     <hr>
-                                    <a href="index.html" class="btn btn-google btn-user btn-block">
+                                    <a href="index.html" class="btn btn-google btn-block">
                                         <i class="fab fa-google fa-fw"></i> Google ile kayıt ol
                                     </a>
-                                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                    <a href="index.html" class="btn btn-facebook btn-block">
                                         <i class="fab fa-facebook-f fa-fw"></i> Facebook ile kayıt ol
                                     </a>
                                 </form>

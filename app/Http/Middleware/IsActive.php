@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class IsApproved
+class IsActive
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,7 @@ class IsApproved
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->status == 'notapproved') {
+        if (Auth::user()->status == 'notactive') {
             return redirect()->route('login');
         }
         return $next($request);

@@ -57,7 +57,7 @@
                                 <th>Yazarlar</th>
                                 <th>Durum</th>
                                 <th>Oluşturulma Tarihi</th>
-                                <th style="width: 150px;">İşlemler</th>
+                                <th style="width: 120px;">İşlemler</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -73,7 +73,7 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <span @if ($post->author == Auth::user()) class="text-success" @endif>{{ $post->author->name }}</span>
+                                        <span @if ($post->author == Auth::user()) class="text-success" @endif>{{ $post->author->firstname . ' ' . $post->author->lastname }}</span>
                                     </td>
                                     <td>
                                         @if ($post->status == 'publish')
@@ -84,10 +84,10 @@
                                     </td>
                                     <td>{{ $post->created_at->diffForHumans() }}</td>
                                     <td @if ($post->author != Auth::user()) style="display: none;" @endif>
-                                        <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-primary"><i
+                                        <a href="{{ route('admin.posts.edit', $post->slug) }}" class="btn btn-primary"><i
                                                 class="fa fa-edit"></i></a>
-                                        <a href="{{ route('admin.posts.destroy', $post->id) }}" class="btn btn-danger"><i
-                                                class="fa fa-times"></i></a>
+                                        <a href="{{ route('admin.posts.destroy', $post->slug) }}"
+                                            class="btn btn-danger"><i class="fa fa-times"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

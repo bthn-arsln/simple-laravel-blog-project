@@ -14,10 +14,12 @@ class UserSeeder extends Seeder
     public function run()
     {
         \App\Models\User::insert([
-            'name' => 'Batuhan Arslan',
+            'firstname' => 'Batuhan',
+            'lastname' => 'Arslan',
             'email' => 'bthnarsln64@gmail.com',
             'type' => 'admin',
-            'status' => 'approved',
+            'status' => 'active',
+            'gender' => 'male',
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
         ]);
         \App\Models\User::factory(10)->create();

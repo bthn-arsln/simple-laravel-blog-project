@@ -33,9 +33,11 @@ class AuthController extends Controller
     public function registerPost(Request $request)
     {
         $user = new User();
-        $user->name = $request->firstname . " " . $request->lastname;
+        $user->firstname = $request->firstname;
+        $user->lastname = $request->lastname;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
+        $user->gender = $request->gender;
         $user->save();
         return redirect()->route('login')->withSuccess('Kaydınız alınmıştır. Sisteme giriş yapabilmeniz için hesabınızın onaylanması gerek.');
     }

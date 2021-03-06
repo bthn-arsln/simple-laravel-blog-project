@@ -21,11 +21,15 @@ class UserFactory extends Factory
      */
     public function definition()
     {
-        $type = ['admin', 'author'];
+        $type = ['moderator', 'author'];
+        $name = [$this->faker->firstNameMale, $this->faker->firstNameFemale];
+        $gender = ['male', 'female'];
         return [
-            'name' => $this->faker->name,
+            'firstname' => $name[rand(0, 1)],
+            'lastname' => $this->faker->lastName,
             'email' => $this->faker->unique()->safeEmail,
             'type' => $type[rand(0, 1)],
+            'gender' => $gender[rand(0, 1)],
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
         ];
     }

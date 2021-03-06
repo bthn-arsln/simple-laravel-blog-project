@@ -49,7 +49,7 @@ class PostController extends Controller
         $post->subtitle = $request->subtitle;
         $post->author_id = $request->author_id;
         $post->description = $request->description;
-        $post->slug = Str::slug($request->slug);
+        $post->slug = Str::slug($request->title);
 
         if ($request->hasFile('image')) {
             $name = Str::slug($request->title) . '.' . $request->image->extension();
@@ -78,9 +78,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        $post = Post::find($id) ?? abort(404, 'Makale bulunamadı');
+        $post = Post::where('slug', $slug)->first() ?? abort(404, 'Makale bulunamadı');
         return view('admin.post-edit', compact('post'));
     }
 
@@ -117,9 +117,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        Post::find($id)->delete();
+        Post::where('slug', $slug)->first()->delete();
         return redirect()->route('admin.posts.index')->withSuccess('Makale başarıyla silindi');
     }
 }
