@@ -50,22 +50,23 @@
                                     </a>
                                 @endif
                                 <br> <br>
-                                <input type="file" name="image" class="form-control">
+                                <input type="file" name="image" class="form-control-file" id="image">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="firstname">Ad</label>
                                 <input type="text" name="firstname" class="form-control"
-                                    value="{{ Auth::user()->firstname }}">
+                                    value="{{ Auth::user()->firstname }}" id="firstname">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="lastname">Soyad</label>
                                 <input type="text" name="lastname" class="form-control"
-                                    value="{{ Auth::user()->lastname }}">
+                                    value="{{ Auth::user()->lastname }}" id="lastname">
                             </div>
 
                             <div class="form-group col-md-12">
                                 <label for="email">Email</label>
-                                <input type="text" name="email" class="form-control" value="{{ Auth::user()->email }}">
+                                <input type="text" name="email" class="form-control" value="{{ Auth::user()->email }}"
+                                    id="email">
                             </div>
                             <div class="form-group col-md-12">
                                 <button type="submit" class="btn btn-block btn-success">Kaydet</button>

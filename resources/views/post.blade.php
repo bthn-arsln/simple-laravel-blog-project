@@ -11,7 +11,7 @@
                         <h1>{{ $post->title }}</h1>
                         <h2 class="subheading">{{ $post->subtitle }}</h2>
                         <span class="meta">
-                            <a href="#">{{ $post->author->name }}</a>
+                            <a href="#">{{ $post->author->firstname . ' ' . $post->author->lastname }}</a>
                             tarafından
                             {{ $post->created_at->diffForHumans() }}
                             paylaşıldı</span>

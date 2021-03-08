@@ -49,4 +49,6 @@ Route::middleware(['UserCheck', 'IsActive'])->prefix('admin')->name('admin.')->g
 
     Route::get('profile', [ProfileController::class, 'index'])->name('profile');
     Route::put('profile/{id}', [ProfileController::class, 'update'])->name('profile.update');
+
+    Route::get('settings', [DashboardController::class, 'settings'])->name('settings');
 });

@@ -16,7 +16,7 @@
         <div class="mb-4 d-sm-flex align-items-center justify-content-between">
             <div>
                 <h1 class="mb-2 text-gray-800 h3">Kullanıcılar</h1>
-                <p class="mb-4">Burada admin olarak sisteminize kayıtlı yazarları görüntüleyebilirsiniz.</p>
+                <p class="mb-4">Burada admin olarak sisteminize kayıtlı kullanıcıları görüntüleyebilirsiniz.</p>
             </div>
             <a href="{{ route('home') }}" class="shadow-sm d-none d-sm-inline-block btn btn-sm btn-primary"
                 target="_blank"><i class="fas fa-globe fa-sm"></i> Siteye Git</a>

@@ -10,4 +10,9 @@ class DashboardController extends Controller
     {
         return view('admin.index');
     }
+
+    public function settings()
+    {
+        return view('admin.settings');
+    }
 }

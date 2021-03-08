@@ -28,11 +28,12 @@
                         <input type="hidden" name="author_id" value="{{ Auth::user()->id }}">
                         <div class="form-group">
                             <label for="title">Başlık</label>
-                            <input type="text" name="title" class="form-control" value="{{ $post->title }}">
+                            <input type="text" name="title" class="form-control" value="{{ $post->title }}" id="title">
                         </div>
                         <div class="form-group">
                             <label for="subtitle">Alt Başlık</label>
-                            <input type="text" name="subtitle" class="form-control" value="{{ $post->subtitle }}">
+                            <input type="text" name="subtitle" class="form-control" value="{{ $post->subtitle }}"
+                                id="subtitle">
                         </div>
                         <div class="form-group">
                             <label for="image">Fotoğraf</label>
@@ -43,19 +44,20 @@
                                 </a>
                             @endif
                             <br> <br>
-                            <input type="file" name="image" class="form-control" value="{{ asset($post->image) }}">
+                            <input type="file" name="image" class="form-control-file" value="{{ asset($post->image) }}"
+                                id="image">
                         </div>
                         <div class="form-group">
                             <label for="status">Durum</label>
-                            <select name="status" class="form-control">
+                            <select name="status" class="form-control" id="status">
                                 <option @if ($post->status === 'publish') selected @endif value="publish">Aktif</option>
                                 <option @if ($post->status === 'draft') selected @endif value="draft">Taslak</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="description">Açıklama</label>
-                            <textarea name="description" class="form-control"
-                                rows="4">{{ $post->description }}</textarea>
+                            <textarea name="description" class="form-control" rows="4"
+                                id="description">{{ $post->description }}</textarea>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-block btn-success">Güncelle</button>

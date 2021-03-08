@@ -23,27 +23,27 @@
             <div class="card">
                 <div class="card-body">
                     <form method="post" action="{{ route('admin.posts.store') }}" enctype="multipart/form-data">
-                        @method('post')
                         @csrf
                         <input type="hidden" name="author_id" value="{{ Auth::user()->id }}">
                         <div class="form-group">
                             <label for="title">Başlık</label>
-                            <input type="text" name="title" class="form-control">
+                            <input type="text" name="title" class="form-control" id="title">
                         </div>
                         <div class="form-group">
                             <label for="subtitle">Alt Başlık</label>
-                            <input type="text" name="subtitle" class="form-control">
-                            <div class=" form-group">
-                                <label for="image">Fotoğraf</label>
-                                <input type="file" name="image" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="description">Açıklama</label>
-                                <textarea name="description" class="form-control" rows="4"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-block btn-success">Oluştur</button>
-                            </div>
+                            <input type="text" name="subtitle" class="form-control" id="subtilte">
+                        </div>
+                        <div class=" form-group">
+                            <label for="image">Fotoğraf</label>
+                            <input type="file" name="image" class="form-control-file" id="image">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Açıklama</label>
+                            <textarea name="description" class="form-control" rows="4" id="description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-block btn-success">Oluştur</button>
+                        </div>
                     </form>
                 </div>
             </div>

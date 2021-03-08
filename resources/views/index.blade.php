@@ -1,5 +1,4 @@
     @extends('layouts.master')
-    @section('title', 'Anasayfa')
     @section('banner')
         <!-- Page Header -->
         <header class="masthead" style="background-image: url(img/home-bg.jpg)">
@@ -33,7 +32,7 @@
                                 </h3>
                             </a>
                             <p class="post-meta">
-                                <a href="#">{{ $post->author->name }}</a>
+                                <a href="#">{{ $post->author->firstname . ' ' . $post->author->lastname }}</a>
                                 tarafından
                                 {{ $post->created_at->diffForHumans() }}
                                 paylaşıldı
