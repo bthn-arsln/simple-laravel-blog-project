@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>@yield('title', env('APP_NAME')) - Panel</title>
+    <title>@yield('title', $config->title) - Panel</title>
 
     @include('admin.layouts.css')
 

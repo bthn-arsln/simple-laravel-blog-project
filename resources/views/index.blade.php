@@ -1,14 +1,14 @@
     @extends('layouts.master')
     @section('banner')
         <!-- Page Header -->
-        <header class="masthead" style="background-image: url(img/home-bg.jpg)">
+        <header class="masthead" style="background-image: url({{ $config->banner }})">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row">
                     <div class="mx-auto col-lg-8 col-md-10">
                         <div class="site-heading">
-                            <h1>{{ env('APP_NAME') }}</h1>
-                            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                            <h1>{{ $config->title }}</h1>
+                            <span class="subheading">{{ $config->description }}</span>
                         </div>
                     </div>
                 </div>

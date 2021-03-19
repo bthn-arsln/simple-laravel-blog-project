@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Config;
 
 class MainController extends Controller
 {
+    public function __construct()
+    {
+        view()->share('config', Config::find(1));
+    }
     public function index()
     {
         $posts = Post::where('status', 'publish')->with('author')->simplePaginate(5);

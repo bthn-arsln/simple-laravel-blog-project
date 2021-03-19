@@ -8,7 +8,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="mx-3 sidebar-brand-text">{{ env('APP_NAME') }}</div>
+                <div class="mx-3 sidebar-brand-text">{{ $config->title }}</div>
             </a>
 
             <!-- Divider -->
@@ -32,9 +32,9 @@
             <!-- Nav Item - Pages Collapse Menu -->
             @if (Auth::user()->type == 'admin')
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.settings') }}">
+                    <a class="nav-link" href="{{ route('admin.configs') }}">
                         <i class="fas fa-fw fa-cog"></i>
-                        <span>Site Ayarları</span></a>
+                        <span>Ayarlar</span></a>
                 </li>
             @endif
 
@@ -52,7 +52,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
+                İçerik
             </div>
 
             <!-- Nav Item - Charts -->

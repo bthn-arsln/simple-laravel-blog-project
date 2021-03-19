@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @include('admin.layouts.sidebar')
-@section('title', 'Başlangıç')
+@section('title')
 @section('content')
     <!-- Main Content -->
     <div id="content">

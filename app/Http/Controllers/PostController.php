@@ -53,8 +53,8 @@ class PostController extends Controller
 
         if ($request->hasFile('image')) {
             $name = Str::slug($request->title) . '.' . $request->image->extension();
-            $request->image->move(public_path('uploads'), $name);
-            $post->image = 'uploads/' . $name;
+            $request->image->move(public_path('uploads/posts'), $name);
+            $post->image = 'uploads/posts/' . $name;
         }
 
         $post->save();
@@ -103,8 +103,8 @@ class PostController extends Controller
 
         if ($request->hasFile('image')) {
             $name = Str::slug($request->title) . '.' . $request->image->extension();
-            $request->image->move(public_path('uploads'), $name);
-            $post->image = 'uploads/' . $name;
+            $request->image->move(public_path('uploads/posts'), $name);
+            $post->image = 'uploads/posts/' . $name;
         }
         $post->save();
 
