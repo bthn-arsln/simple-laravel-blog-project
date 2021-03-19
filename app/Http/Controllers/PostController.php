@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Post;
+use App\Models\Config;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        view()->share('config', Config::find(1));
+    }
     /**
      * Display a listing of the resource.
      *
