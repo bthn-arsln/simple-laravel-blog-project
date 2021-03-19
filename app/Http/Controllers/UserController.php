@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Config;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        view()->share('config', Config::find(1));
+    }
     public function index()
     {
         $users = new User();

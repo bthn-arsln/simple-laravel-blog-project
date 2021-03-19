@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Config;
 use Illuminate\Support\Str;
 
 class ProfileController extends Controller
 {
+    public function __construct()
+    {
+        view()->share('config', Config::find(1));
+    }
     public function index()
     {
         return view('admin.profile');
