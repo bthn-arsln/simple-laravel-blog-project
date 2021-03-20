@@ -22,6 +22,7 @@ class DashboardController extends Controller
     {
         return view('admin.configs');
     }
+
     public function configsUpdate(Request $request)
     {
         $config = Config::find(1);
