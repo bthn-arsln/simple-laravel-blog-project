@@ -2,7 +2,7 @@
 <footer class="bg-white sticky-footer">
     <div class="container my-auto">
         <div class="my-auto text-center copyright">
-            <span>Copyright &copy; {{ $config->footer }}</span>
+            <span>Copyright &copy; 2011-{{ date('Y') }} {{ $config->footer }}</span>
         </div>
     </div>
 </footer>

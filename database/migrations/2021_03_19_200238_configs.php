@@ -20,6 +20,7 @@ class Configs extends Migration
             $table->string('favicon')->nullable();
             $table->string('banner')->nullable();
             $table->string('footer')->nullable();
+            $table->enum('status', ['active', 'passive']);
             $table->string('description')->nullable();
             $table->timestamps();
         });

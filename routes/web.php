@@ -24,12 +24,9 @@ Route::get('/', [MainController::class, 'index'])->name('home');
 
 Route::get('post/{slug}', [MainController::class, 'post'])->name('post');
 
-Route::get('contact', function () {
-    return view('contact');
-});
-Route::get('about', function () {
-    return view('about');
-});
+Route::get('about', [MainController::class, 'about'])->name('about');
+
+Route::get('contact', [MainController::class, 'contact'])->name('contact');
 
 Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class, 'loginPost'])->name('login.post');
@@ -52,4 +49,9 @@ Route::middleware(['UserCheck', 'IsActive'])->prefix('admin')->name('admin.')->g
 
     Route::get('configs', [DashboardController::class, 'configs'])->name('configs');
     Route::post('configs', [DashboardController::class, 'configsUpdate'])->name('configs.update');
+
+    Route::post('config', [DashboardController::class, 'socialPost'])->name('social.post');
+    // Route::get('social/{id}', [DashboardController::class, 'socialEdit'])->name('social.edit');
+    // Route::post('social/{id}', [DashboardController::class, 'socialUpdate'])->name('social.update');
+    Route::get('config/{id}', [DashboardController::class, 'socialDestroy'])->name('social.destroy');
 });

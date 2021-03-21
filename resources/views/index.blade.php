@@ -1,4 +1,5 @@
     @extends('layouts.master')
+    @section('title')
     @section('banner')
         <!-- Page Header -->
         <header class="masthead" style="background-image: url({{ $config->banner }})">

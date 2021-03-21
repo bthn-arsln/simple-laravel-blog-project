@@ -38,7 +38,7 @@
                         <div class="form-group">
                             <label for="image">Fotoğraf</label>
                             @if ($post->image)
-                                <a href="{{ asset($post->image) }}" traget="_blank">
+                                <a href="{{ asset($post->image) }}" target="_blank">
                                     <img src="{{ asset($post->image) }}" alt="{{ $post->title }}" class="img-responsive"
                                         style="width: 200px;">
                                 </a>

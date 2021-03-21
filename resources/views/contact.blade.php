@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Contact')
+@section('title', 'İletişim')
 @section('banner')
     <!-- Page Header -->
     <header class="masthead" style="background-image: url('img/contact-bg.jpg')">

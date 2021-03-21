@@ -86,8 +86,8 @@
                                     <td @if ($post->author != Auth::user()) style="display: none;" @endif>
                                         <a href="{{ route('admin.posts.edit', $post->slug) }}" class="btn btn-primary"><i
                                                 class="fa fa-edit"></i></a>
-                                        <a href="{{ route('admin.posts.destroy', $post->slug) }}"
-                                            class="btn btn-danger"><i class="fa fa-times"></i></a>
+                                        <a href="{{ route('admin.posts.destroy', $post->id) }}" class="btn btn-danger"><i
+                                                class="fa fa-times"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

@@ -122,9 +122,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($slug)
+    public function destroy($id)
     {
-        Post::where('slug', $slug)->first()->delete();
+        Post::where('id', $id)->first()->delete();
         return redirect()->route('admin.posts.index')->withSuccess('Makale başarıyla silindi');
     }
 }

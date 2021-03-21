@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Post')
+@section('title', {{ $post->title }})
 @section('banner')
     <!-- Page Header -->
     <header class="masthead" style="background-image: url({{ asset($post->image) }})">
