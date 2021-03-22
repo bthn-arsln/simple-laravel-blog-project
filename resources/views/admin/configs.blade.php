@@ -42,7 +42,8 @@
                                             </a>
                                         @endif
                                     </div>
-                                    <input type="file" name="logo" class="form-control-file" id="logo">
+                                    <input type="file" name="logo" class="form-control-file" id="logo"
+                                        value="{{ $config->logo }}">
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
@@ -54,7 +55,8 @@
                                             </a>
                                         @endif
                                     </div>
-                                    <input type="file" name="favicon" class="form-control-file" id="favicon">
+                                    <input type="file" name="favicon" class="form-control-file" id="favicon"
+                                        value="{{ $config->favicon }}">
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
@@ -66,7 +68,8 @@
                                             </a>
                                         @endif
                                     </div>
-                                    <input type="file" name="banner" class="form-control-file" id="banner">
+                                    <input type="file" name="banner" class="form-control-file" id="banner"
+                                        value="{{ $config->banner }}">
                                 </div>
                             </div>
                         </div>

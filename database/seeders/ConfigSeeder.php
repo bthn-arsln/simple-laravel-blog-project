@@ -15,7 +15,9 @@ class ConfigSeeder extends Seeder
     public function run()
     {
         DB::table('configs')->insert([
-            'title' => 'Larave',
+            'title' => 'Site Adı',
+            'description' => 'Site Açıklama',
+            'footer' => 'Footer Alanı',
             'created_at' => now(),
             'updated_at' => now()
         ]);

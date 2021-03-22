@@ -31,7 +31,7 @@
                         </div>
                         <div class="form-group">
                             <label for="subtitle">Alt Başlık</label>
-                            <input type="text" name="subtitle" class="form-control" id="subtilte">
+                            <input type="text" name="subtitle" class="form-control" id="subtitle">
                         </div>
                         <div class=" form-group">
                             <label for="image">Fotoğraf</label>

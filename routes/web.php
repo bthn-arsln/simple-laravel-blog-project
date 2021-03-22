@@ -54,4 +54,7 @@ Route::middleware(['UserCheck', 'IsActive'])->prefix('admin')->name('admin.')->g
     // Route::get('social/{id}', [DashboardController::class, 'socialEdit'])->name('social.edit');
     // Route::post('social/{id}', [DashboardController::class, 'socialUpdate'])->name('social.update');
     Route::get('config/{id}', [DashboardController::class, 'socialDestroy'])->name('social.destroy');
+
+    Route::get('about', [DashboardController::class, 'about'])->name('about');
+    Route::put('about', [DashboardController::class, 'aboutUpdate'])->name('about.update');
 });

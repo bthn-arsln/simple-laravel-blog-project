@@ -47,6 +47,15 @@
                 </li>
             @endif
 
+            <!-- Nav Item - Utilities Collapse Menu -->
+            @if (Auth::user()->type == 'admin')
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.about') }}">
+                        <i class="fas fa-fw fa-user"></i>
+                        <span>Hakkında</span></a>
+                </li>
+            @endif
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 

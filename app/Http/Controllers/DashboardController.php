@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Config;
 use App\Models\Social;
+use App\Models\About;
 use Illuminate\Support\Str;
 
 class DashboardController extends Controller
@@ -50,7 +51,7 @@ class DashboardController extends Controller
         }
 
         $config->save();
-        return redirect()->route('admin.configs')->withSuccess('Ayarlar başarıyla güncellendi');
+        return redirect()->route('admin.configs')->withSuccess('Ayarlar başarıyla kaydedildi');
     }
 
     public function socialPost(Request $request)
@@ -80,5 +81,29 @@ class DashboardController extends Controller
     {
         Social::where('id', $id)->first()->delete();
         return redirect()->route('admin.configs');
+    }
+
+    public function about()
+    {
+        $about = About::find(1);
+        return view('admin.about', compact('about'));
+    }
+
+    public function aboutUpdate(Request $request)
+    {
+        $about = About::find(1);
+        $about->name = $request->name;
+        $about->shortdescription = $request->shortdescription;
+        $about->description = $request->description;
+
+        if ($request->hasFile('photo')) {
+            $fileName = Str::slug($request->name) . '.' . $request->photo->extension();
+            $request->photo->move(public_path('uploads/about'), $fileName);
+            $request->photo = 'uploads/about/' . $fileName;
+        }
+
+        $about->save();
+
+        return redirect()->route('admin.about')->withSuccess('Ayarlar başarıyla kaydedildi');
     }
 }

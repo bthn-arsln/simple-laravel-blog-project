@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Config;
 use App\Models\Social;
+use App\Models\About;
 
 class MainController extends Controller
 {
@@ -25,7 +26,8 @@ class MainController extends Controller
 
     public function about()
     {
-        return view('about');
+        $about = About::find(1);
+        return view('about', compact('about'));
     }
 
     public function contact()
