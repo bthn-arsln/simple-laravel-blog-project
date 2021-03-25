@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Config;
 use App\Models\Social;
 use App\Models\About;
+use App\Models\Menu;
 use Illuminate\Support\Str;
 
 class DashboardController extends Controller
@@ -99,7 +100,7 @@ class DashboardController extends Controller
         if ($request->hasFile('photo')) {
             $fileName = Str::slug($request->name) . '.' . $request->photo->extension();
             $request->photo->move(public_path('uploads/about'), $fileName);
-            $request->photo = 'uploads/about/' . $fileName;
+            $about->photo = 'uploads/about/' . $fileName;
         }
 
         $about->save();

@@ -43,14 +43,19 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="ml-auto navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">Home</a>
+                        <a class="nav-link" href="{{ route('home') }}">Anasayfa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('about') }}">About</a>
+                        <a class="nav-link" href="{{ route('about') }}">Hakkımda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                        <a class="nav-link" href="{{ route('contact') }}">İletişim</a>
                     </li>
+                    @foreach ($menus as $menu)
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url($menu->url) }}">{{ $menu->title }}</a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div>

@@ -11,7 +11,7 @@
 
     <title>{{ $config->title }} - @yield('title', 'Panel')</title>
 
-    <link rel="icon" href="{{ $config->favicon }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset($config->favicon) }}" type="image/x-icon">
 
     @include('admin.layouts.css')
 

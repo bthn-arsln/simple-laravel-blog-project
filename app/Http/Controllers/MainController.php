@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\Config;
 use App\Models\Social;
 use App\Models\About;
+use App\Models\Menu;
 
 class MainController extends Controller
 {
@@ -17,6 +18,7 @@ class MainController extends Controller
         }
         view()->share('config', Config::find(1));
         view()->share('socials', Social::all());
+        view()->share('menus', Menu::all());
     }
     public function index()
     {
@@ -39,5 +41,11 @@ class MainController extends Controller
     {
         $post = Post::with('author')->whereSlug($slug)->first() ?? abort(404, "Makale bulunamadı");
         return view('post', compact('post'));
+    }
+
+    public function pages($url)
+    {
+        $menu = Menu::where('url', $url)->first();
+        return view('pages', compact('menu'));
     }
 }

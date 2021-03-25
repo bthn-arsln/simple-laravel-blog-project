@@ -104,7 +104,7 @@
                                         </div>
                                         <a href="{{ $social->url }}">{{ $social->url }}</a>
                                         <a href="{{ route('admin.social.destroy', $social->id) }}"
-                                            class="btn btn-sm btn-outline-danger ml-2"><i
+                                            class="ml-2"><i
                                                 class="fa fa-times text-danger"></i></a>
                                     </div>
                                 @endforeach

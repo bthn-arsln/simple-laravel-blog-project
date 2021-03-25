@@ -14,10 +14,12 @@ class AuthController extends Controller
     {
         view()->share('config', Config::find(1));
     }
+
     public function login()
     {
         return view('admin.login');
     }
+
     public function loginPost(Request $request)
     {
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
@@ -25,6 +27,7 @@ class AuthController extends Controller
         }
         return redirect()->route('login');
     }
+
     public function logout()
     {
         Auth::logout();
@@ -35,6 +38,7 @@ class AuthController extends Controller
     {
         return view('admin.register');
     }
+
     public function registerPost(Request $request)
     {
         $user = new User();

@@ -37,22 +37,28 @@
                         <span>Ayarlar</span></a>
                 </li>
             @endif
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            @if (Auth::user()->type == 'admin' || Auth::user()->type == 'moderator')
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.users') }}">
-                        <i class="fas fa-fw fa-users"></i>
-                        <span>Kullanıcılar</span></a>
-                </li>
-            @endif
-
             <!-- Nav Item - Utilities Collapse Menu -->
             @if (Auth::user()->type == 'admin')
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.about') }}">
                         <i class="fas fa-fw fa-user"></i>
                         <span>Hakkında</span></a>
+                </li>
+            @endif
+            <!-- Nav Item - Utilities Collapse Menu -->
+            @if (Auth::user()->type == 'admin')
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.menus.index') }}">
+                        <i class="fas fa-fw fa-compass"></i>
+                        <span>Menüler</span></a>
+                </li>
+            @endif
+            <!-- Nav Item - Utilities Collapse Menu -->
+            @if (Auth::user()->type == 'admin' || Auth::user()->type == 'moderator')
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.users') }}">
+                        <i class="fas fa-fw fa-users"></i>
+                        <span>Kullanıcılar</span></a>
                 </li>
             @endif
 

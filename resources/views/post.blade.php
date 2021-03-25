@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', {{ $post->title }})
+@section('title', $post->title)
 @section('banner')
     <!-- Page Header -->
     <header class="masthead" style="background-image: url({{ asset($post->image) }})">
@@ -27,7 +27,7 @@
         <div class="container">
             <div class="row">
                 <div class="mx-auto col-lg-8 col-md-10">
-                    {{ $post->description }}
+                    {!! $post->description !!}
                 </div>
             </div>
         </div>
