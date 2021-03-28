@@ -18,7 +18,7 @@ class Menus extends Migration
             $table->string('title');
             $table->string('image')->nullable();
             $table->string('url');
-            $table->string('content');
+            $table->longText('content');
             $table->timestamps();
         });
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Config;
 use Illuminate\Http\Request;
 use App\Models\Menu;
+use App\Models\Contact;
 use Illuminate\Support\Str;
 
 class MenuController extends Controller
@@ -12,6 +13,7 @@ class MenuController extends Controller
     public function __construct()
     {
         view()->share('config', Config::find(1));
+        view()->share('messages', Contact::all());
     }
     /**
      * Display a listing of the resource.

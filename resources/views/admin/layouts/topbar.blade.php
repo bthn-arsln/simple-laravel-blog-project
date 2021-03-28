@@ -102,58 +102,26 @@
                 aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-envelope fa-fw"></i>
                 <!-- Counter - Messages -->
-                <span class="badge badge-danger badge-counter">7</span>
+                {{-- <span class="badge badge-danger badge-counter">
+
+                </span> --}}
             </a>
             <!-- Dropdown - Messages -->
             <div class="shadow dropdown-list dropdown-menu dropdown-menu-right animated--grow-in"
                 aria-labelledby="messagesDropdown">
                 <h6 class="dropdown-header">
-                    Message Center
+                    Mesaj Kutusu
                 </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                    <div class="mr-3 dropdown-list-image">
-                        <img class="rounded-circle" src="{{ asset('img/undraw_profile_1.svg') }}" alt="">
-                        <div class="status-indicator bg-success"></div>
-                    </div>
-                    <div class="font-weight-bold">
-                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                            problem I've been having.</div>
-                        <div class="text-gray-500 small">Emily Fowler · 58m</div>
-                    </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                    <div class="mr-3 dropdown-list-image">
-                        <img class="rounded-circle" src="{{ asset('img/undraw_profile_2.svg') }}" alt="">
-                        <div class="status-indicator"></div>
-                    </div>
-                    <div>
-                        <div class="text-truncate">I have the photos that you ordered last month, how
-                            would you like them sent to you?</div>
-                        <div class="text-gray-500 small">Jae Chun · 1d</div>
-                    </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                    <div class="mr-3 dropdown-list-image">
-                        <img class="rounded-circle" src="{{ asset('img/undraw_profile_3.svg') }}" alt="">
-                        <div class="status-indicator bg-warning"></div>
-                    </div>
-                    <div>
-                        <div class="text-truncate">Last month's report looks great, I am very happy with
-                            the progress so far, keep up the good work!</div>
-                        <div class="text-gray-500 small">Morgan Alvarez · 2d</div>
-                    </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                    <div class="mr-3 dropdown-list-image">
-                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
-                        <div class="status-indicator bg-success"></div>
-                    </div>
-                    <div>
-                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                            told me that people say this to all dogs, even if they aren't good...</div>
-                        <div class="text-gray-500 small">Chicken the Dog · 2w</div>
-                    </div>
-                </a>
+                @foreach ($messages as $message)
+                    <a class="dropdown-item d-flex align-items-center" href="#">
+
+                        <div class="font-weight-bold">
+                            <div class="text-truncate">{{ $message->message }}</div>
+                            <div class="text-gray-500 small">{{ $message->name }} ·
+                                {{ $message->created_at->diffForHumans() }}</div>
+                        </div>
+                    </a>
+                @endforeach
                 <a class="text-center text-gray-500 dropdown-item small" href="#">Read More Messages</a>
             </div>
         </li>

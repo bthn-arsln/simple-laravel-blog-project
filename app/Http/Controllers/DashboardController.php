@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Config;
 use App\Models\Social;
 use App\Models\About;
-use App\Models\Menu;
+use App\Models\Contact;
 use Illuminate\Support\Str;
 
 class DashboardController extends Controller
@@ -14,6 +14,7 @@ class DashboardController extends Controller
     public function __construct()
     {
         view()->share('config', Config::find(1));
+        view()->share('messages', Contact::all());
     }
 
     public function index()

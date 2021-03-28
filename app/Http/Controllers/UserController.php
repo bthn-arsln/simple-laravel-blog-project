@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Config;
+use App\Models\Contact;
 
 class UserController extends Controller
 {
     public function __construct()
     {
         view()->share('config', Config::find(1));
+        view()->share('messages', Contact::all());
     }
     public function index()
     {

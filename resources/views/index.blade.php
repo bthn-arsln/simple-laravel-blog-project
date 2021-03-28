@@ -16,8 +16,12 @@
             </div>
         </header>
     @endsection
-
     @section('content')
+        @if (Session::has('success'))
+            <div class="alert alert-success">
+                <i class="fa fa-check-circle"></i> {{ Session::get('success') }}
+            </div>
+        @endif
         <!-- Main Content -->
         <div class="container">
             <div class="row">

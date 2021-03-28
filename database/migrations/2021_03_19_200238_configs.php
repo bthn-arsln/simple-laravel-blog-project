@@ -21,7 +21,7 @@ class Configs extends Migration
             $table->string('banner')->nullable();
             $table->string('footer')->nullable();
             $table->enum('status', ['active', 'passive']);
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

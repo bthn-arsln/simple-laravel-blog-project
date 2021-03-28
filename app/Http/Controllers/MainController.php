@@ -8,6 +8,7 @@ use App\Models\Config;
 use App\Models\Social;
 use App\Models\About;
 use App\Models\Menu;
+use App\Models\Contact;
 
 class MainController extends Controller
 {
@@ -35,6 +36,19 @@ class MainController extends Controller
     public function contact()
     {
         return view('contact');
+    }
+
+    public function contactPost(Request $request)
+    {
+        $contact = new Contact();
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->phone = $request->phone;
+        $contact->message = $request->message;
+
+        $contact->save();
+
+        return redirect()->route('home')->withSuccess('Mesajınız başarıyla iletilmiştir');
     }
 
     public function post($slug)

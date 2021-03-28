@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Post;
 use App\Models\Config;
+use App\Models\Contact;
 
 class PostController extends Controller
 {
     public function __construct()
     {
         view()->share('config', Config::find(1));
+        view()->share('messages', Contact::all());
     }
     /**
      * Display a listing of the resource.

@@ -33,6 +33,7 @@ Route::get('post/{slug}', [MainController::class, 'post'])->name('post');
 Route::get('about', [MainController::class, 'about'])->name('about');
 
 Route::get('contact', [MainController::class, 'contact'])->name('contact');
+Route::post('contact', [MainController::class, 'contactPost'])->name('contact.post');
 
 Route::middleware(['UserCheck', 'IsActive'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('posts/{id}', [PostController::class, 'destroy'])->whereNumber('id')->name('posts.destroy');
