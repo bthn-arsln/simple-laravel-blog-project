@@ -16,7 +16,6 @@ class Configs extends Migration
         Schema::create('configs', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
-            $table->string('logo')->nullable();
             $table->string('favicon')->nullable();
             $table->string('banner')->nullable();
             $table->string('footer')->nullable();

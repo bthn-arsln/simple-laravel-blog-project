@@ -36,11 +36,6 @@ class DashboardController extends Controller
         $config->description = $request->description;
         $config->status = $request->status;
 
-        if ($request->hasFile('logo')) {
-            $logo = Str::slug($request->title) . '-logo.' . $request->logo->extension();
-            $request->logo->move(public_path('uploads'), $logo);
-            $config->logo = 'uploads/' . $logo;
-        }
         if ($request->hasFile('favicon')) {
             $favicon = Str::slug($request->title) . '-favicon.' . $request->favicon->extension();
             $request->favicon->move(public_path('uploads'), $favicon);

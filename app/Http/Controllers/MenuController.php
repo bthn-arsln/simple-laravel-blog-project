@@ -56,7 +56,7 @@ class MenuController extends Controller
         }
 
         $menu->save();
-        return redirect()->route('admin.menu')->withSuccess('Menü başarıyla eklendi');
+        return redirect()->route('admin.menus.index')->withSuccess('Menü başarıyla eklendi');
     }
 
     /**
